@@ -1,0 +1,54 @@
+openapi: 3.0.1
+info:
+  title: GetWeather
+  description: Get the weather for an address
+  version: 1.0.0
+servers:
+  - url: https://example.com
+paths:
+  /weather:
+    post:
+      summary: Get the weather for an address
+      operationId: getWeather
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: string
+                  description: The address to get the weather for
+              required:
+                - address
+      responses:
+        '200':
+          description: Weather data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  今日天气:
+                    type: string
+                  地址:
+                    type: string
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
