@@ -2,6 +2,7 @@
 
 ## Usage
 
+0. You need to have a domain and a SSL certificate or public IP address
 1. Clone this repo
 2. Replace all `example.com` in all files with your domain
 3. Install dependencies in `requirements.txt`
